@@ -8,10 +8,12 @@ public class BoardManager : MonoBehaviour
     public static BoardManager Instance;
     [SerializeField] private Cell CellPrefab;
     [SerializeField] private Player PlayerPrefab;
+    [SerializeField] private Enemigo EnemigoPrefab;
     private Grid grid;
     private Player player;
     [SerializeField]
     private float moveSpeed = 2f;
+    
 
     private void Awake()
     {
@@ -20,9 +22,12 @@ public class BoardManager : MonoBehaviour
 
     private void Start()
     {
+
         grid = new Grid(10, 10, 1, CellPrefab);
 
-        player = Instantiate(PlayerPrefab, new Vector2(0, 0), Quaternion.identity);  
+        player = Instantiate(PlayerPrefab, new Vector2(0, 0), Quaternion.identity); 
+        
+        Instantiate(EnemigoPrefab, new Vector2(Random.Range(0, 10), Random.Range(0, 10)), Quaternion.identity);  
     }
 
     public void CellMouseClick(int x, int y)

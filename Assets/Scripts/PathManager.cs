@@ -103,7 +103,7 @@ public class PathManager : MonoBehaviour
 
         foreach(Cell c in path)
         {
-            c.SetColor(Color.green);
+            //c.SetColor(Color.green);
             Debug.Log(c.ToString());
         }
         return path;

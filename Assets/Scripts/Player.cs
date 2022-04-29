@@ -19,7 +19,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+       if (Input.GetKeyDown(KeyCode.RightArrow))
+        {    
+           Debug.Log("Derecha");
+           
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+           Debug.Log("Izquierda");
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Debug.Log("Arriba");
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Debug.Log("Abajo");
+        }
     }
 
     public void SetPath(List<Cell> path)
